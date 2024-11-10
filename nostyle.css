@@ -1,0 +1,265 @@
+@charset 'UTF-8';
+
+:where(:root) {
+  cursor: default;
+  line-height: 1;
+  overflow-wrap: break-word;
+  tab-size: 4;
+  text-size-adjust: 100%; /* Prevent adjustments of font size after orientation changes */
+  font-size: 16px;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  hyphens: auto;
+}
+
+*,
+::before,
+::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+:where(::selection) {
+  background-color: #9ac0ed;
+  text-shadow: none;
+}
+
+:where(body) {
+  margin: 0;
+  padding: 0;
+  background-color: #f5f6f7;
+  color: #0a0a0a;
+  background-repeat: no-repeat;
+}
+
+:where(a, a:visited) {
+  color: #0a53c9;
+}
+
+:where(h1, h2, h3, h4, h5, h6) {
+  margin: 0;
+}
+
+:where(p) {
+  margin: 0;
+}
+
+:where(dl, ol, ul) :where(dl, ol, ul) {
+  margin: 0;
+}
+
+:where(hr) {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1rem 0;
+  padding: 0;
+}
+
+:where(nav) :where(ol, ul) {
+  padding: 0;
+}
+
+:where(pre) {
+  font-family: monospace, monospace; /* 1 */
+  font-size: inherit;
+  overflow: auto; /* 3 */
+}
+
+:where(abbr) {
+  font-style: italic;
+}
+
+:where(b, strong) {
+  font-weight: bolder;
+}
+
+:where(code, kbd, samp) {
+  font-family: monospace, monospace; /* 1 */
+  font-size: inherit;
+}
+
+:where(small) {
+  font-size: 80%;
+}
+
+:where(audio, canvas, iframe, img, svg, video) {
+  vertical-align: middle;
+}
+
+:where(iframe) {
+  border-style: none;
+  border-width: 0;
+}
+
+:where(svg:not([fill])) {
+  fill: currentColor;
+}
+
+:where(table) {
+  border-collapse: collapse;
+  border-color: currentColor;
+  text-indent: 0;
+  border-spacing: 0;
+}
+
+:where(button) {
+  appearance: auto;
+}
+
+:where(button):not(:disabled),
+:where([type='button']):not(:disabled),
+:where([type='reset']):not(:disabled),
+:where([type='submit']):not(:disabled) {
+  cursor: pointer;
+}
+
+:where(button, input, select, textarea, optgroup) {
+  letter-spacing: inherit;
+  padding: 0;
+  font: inherit;
+  color: inherit;
+  margin: 0;
+}
+
+:where(button, input, select, textarea) {
+  border: 1px solid currentColor;
+}
+
+:where(select) {
+  appearance: none;
+  padding: 0;
+}
+
+:where(select[multiple]) {
+  background-image: none;
+}
+
+:where(fieldset) {
+  border-width: 1px;
+  border-style: solid;
+  border-color: #a0a0a0;
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+:where(progress) {
+  vertical-align: baseline;
+}
+
+:where(textarea) {
+  margin: 0;
+  resize: none;
+}
+
+:where([type="search"]) {
+  appearance: auto;
+}
+
+::placeholder {
+  color: inherit;
+  opacity: 0.5;
+}
+
+:where(dialog) {
+  display: block;
+  background-color: white;
+  border: solid;
+  color: inherit;
+  height: fit-content;
+  left: 0;
+  margin: auto;
+  position: absolute;
+  right: 0;
+  width: fit-content;
+  padding: 0;
+}
+
+:where(details > summary:first-of-type) {
+  display: list-item;
+}
+
+:where(iframe, img, input, video, select, textarea) {
+  height: auto;
+  width: 100%;
+  max-width: 100%;
+}
+
+:where(sub, sup) {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+:where(sub) {
+  bottom: -0.25em;
+}
+
+:where(sup) {
+  top: -0.5em;
+}
+
+/* ==========================================================================
+   https://www.phpied.com/delay-loading-your-print-css/
+   ========================================================================== */
+
+@media print {
+  *,
+  *::before,
+  *::after {
+    background: #fff !important;
+    color: #000 !important;
+    /* Black prints faster */
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+
+  a[href]::after {
+    content: " (" attr(href) ")";
+  }
+
+  abbr[title]::after {
+    content: " (" attr(title) ")";
+  }
+
+  a[href^="#"]::after,
+  a[href^="javascript:"]::after {
+    content: "";
+  }
+
+  pre {
+    white-space: pre-wrap !important;
+  }
+
+  pre,
+  blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
+
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+}

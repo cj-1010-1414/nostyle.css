@@ -1,0 +1,14 @@
+{
+  "name": "nostyle.css",
+  "version": "1.0.0",
+  "description": "Harmonisasi tampilan halaman web untuk semua browser.",
+  "main": "nostyle.css",
+  "style": "nostyle.css",
+  "keywords": ["css", "default", "reset", "normalize"],
+  "author": "Chevalier",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cj-1010-1414/nostyle.css"
+  },
+  "license": "MIT"
+}
