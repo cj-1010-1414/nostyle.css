@@ -10,6 +10,14 @@ CSS-nya campuran dari [Sanitize.css](https://github.com/csstools/sanitize.css/),
 pnpm add nostyle.css 
 ```
 
+## Penggunaan
+
+Misalkan penggunaan dengan Vite, seperti ini:
+
+```
+@import 'nostyle.css';
+```
+
 ## Lisensi
 
 MIT
